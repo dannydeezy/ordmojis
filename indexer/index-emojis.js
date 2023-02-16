@@ -46,7 +46,7 @@ The valid emoji is the first inscribed \`.txt\` file containing only the raw emo
         const item = {
             emoji,
             isClaimed: !!storage.lowestEmojis[emoji],
-            file: `https://dannydeezy.github.io/ordmojis/files/${i}.txt)`
+            file: `https://dannydeezy.github.io/ordmojis/files/${i}.txt`
         }
         if (storage.lowestEmojis[emoji]) {
             item.inscriptionNumber = storage.lowestEmojis[emoji].num
