@@ -39,15 +39,15 @@ The raw index file is updated regularly at [this link](https://dannydeezy.github
 The valid emoji is the first inscribed \`.txt\` file containing only the raw emoji Unicode character.
 
   Emoji             File               Inscription Num       Inscription ID   
--------------------------------------------------------
-`
+
+  `
     for (let i = 0; i < orderedEmojis.length; i++) {
         const emoji = orderedEmojis[i]
         const lowestNum = storage.lowestEmojis[emoji] ? storage.lowestEmojis[emoji].num : ''
         const id = storage.lowestEmojis[emoji] ? storage.lowestEmojis[emoji].id : ''
-        Readme += `-------------------------------------------------------
+        Readme += `
    ${emoji}           ${`[${i}.txt](https://dannydeezy.github.io/ordmojis/files/${i}.txt`}               ${lowestNum}           ${id}
--------------------------------------------------------`
+`
     }
     fs.writeFileSync('../README.md', Readme)
 }
