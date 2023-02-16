@@ -7403,8 +7403,32 @@
     "🛋️": {
       "id": "2cff5df739c3cd2e0235243f23ee71f33751fd8053c5a1bcf5d821fdb6fcb41ei0",
       "num": 121947
+    },
+    "🚷": {
+      "id": "634d85af910d9ae5e58326dff97f6d60bc3232cf45e81bc27ff253a474e520e5i0",
+      "num": 122062
+    },
+    "↪️": {
+      "id": "ba724f5d1f788da21b8dec1259820b99609f0d3c1f76df7704b763d6612f1599i0",
+      "num": 122061
+    },
+    "↔️": {
+      "id": "8f6365baedda11cb914b0c4d9dd3871afbf9f4c56911417a3307175bfe7dcb93i0",
+      "num": 122060
+    },
+    "↩️": {
+      "id": "1ab9bfb448db2130f09008b0b536fea8eeaedd0016d5461cb4b7eb4ca5784e3fi0",
+      "num": 122058
+    },
+    "⤵️": {
+      "id": "0ea305c53ac74fd32ac85cf8bff0230716974c8fb79b365967bb6bfe543a7619i0",
+      "num": 122057
+    },
+    "🚱": {
+      "id": "30bf51f56a239d40cbc27eb6301561db6b0554396fbbab427a7e944bfaa52f0fi0",
+      "num": 122055
     }
   },
   "latestOffset": 0,
-  "syncedToNum": 122054
+  "syncedToNum": 122187
 }
