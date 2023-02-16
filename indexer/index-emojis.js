@@ -31,6 +31,8 @@ if (!storage.latestOffset) {
 }
 
 function updateReadme() {
+    return
+    /*
     let Readme = `
 Tracking the first of each official [Unicode Emoji](https://unicode.org/emoji/charts/full-emoji-list.html) to be inscribed on bitcoin.
 
@@ -58,8 +60,8 @@ The valid emoji is the first inscribed \`.txt\` file containing only the raw emo
     Readme += `
 \`\`\`
 `
-    
     fs.writeFileSync('../README.md', Readme)
+    */
 }
 
 async function processBatch(inscriptions) {
