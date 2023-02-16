@@ -3,6 +3,7 @@ const axios = require('axios')
 const ORD_URL = 'https://turbo.ordinalswallet.com'
 const dataByEmoji = require('unicode-emoji-json/data-by-emoji.json')
 const orderedEmojis = require('unicode-emoji-json/data-ordered-emoji.json')
+const child_process = require('child_process')
 
 const fs = require('fs')
 
@@ -30,38 +31,10 @@ if (!storage.latestOffset) {
     storage.latestOffset = 0
 }
 
-function updateReadme() {
-    return
-    /*
-    let Readme = `
-Tracking the first of each official [Unicode Emoji](https://unicode.org/emoji/charts/full-emoji-list.html) to be inscribed on bitcoin.
-
-The raw index file is updated regularly at [this link](https://dannydeezy.github.io/ordmojis/indexer/lowest-emojis.json).
-
-The valid emoji is the first inscribed \`.txt\` file containing only the raw emoji Unicode character.
-
-\`\`\``
-
-    const info = []
-    for (let i = 0; i < orderedEmojis.length; i++) {
-        const emoji = orderedEmojis[i]
-        const item = {
-            emoji,
-            isClaimed: !!storage.lowestEmojis[emoji],
-            file: `https://dannydeezy.github.io/ordmojis/files/${i}.txt`
-        }
-        if (storage.lowestEmojis[emoji]) {
-            item.inscriptionNumber = storage.lowestEmojis[emoji].num
-            item.inscriptionId = storage.lowestEmojis[emoji].id
-        }
-        info.push(item)
-    }
-    Readme += JSON.stringify(info, null, 2)
-    Readme += `
-\`\`\`
-`
-    fs.writeFileSync('../README.md', Readme)
-    */
+function updateGithub() {
+    child_process.execSync('git add .')
+    child_process.execSync('git commit -m "auto-update"')
+    child_process.execSync('git push origin')
 }
 
 async function processBatch(inscriptions) {
@@ -95,7 +68,7 @@ function markFullyIndexed(topInscriptionNum) {
     storage.syncedToNum = topInscriptionNum
     storage.latestOffset = 0
     fs.writeFileSync(STORAGE_FILE, JSON.stringify(storage, null, 2))
-    updateReadme()
+    updateGithub()
 }
 
 let topInscriptionNum
