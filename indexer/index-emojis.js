@@ -54,7 +54,7 @@ The valid emoji is the first inscribed \`.txt\` file containing only the raw emo
         }
         info.push(item)
     }
-    Readme += JSON.stringify(info)
+    Readme += JSON.stringify(info, null, 2)
     Readme += `
 \`\`\`
 `
