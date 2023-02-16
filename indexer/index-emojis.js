@@ -33,7 +33,12 @@ if (!storage.latestOffset) {
 
 function updateGithub() {
     child_process.execSync('git add .')
-    child_process.execSync('git commit -m "auto-update"')
+    try {
+        child_process.execSync('git commit -m "auto-update"')
+    } catch(err) {
+        console.log('Probably no changes')
+        return
+    }
     child_process.execSync('git push origin')
 }
 
