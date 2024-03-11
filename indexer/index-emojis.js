@@ -46,7 +46,6 @@ async function processBatch(inscriptions) {
     const allowedContentTypes = [
         'text/plain;charset=utf-8',
         'text/plain',
-        'application/json',
         'text/html;charset=utf-8',
         'text/html'
     ];
