@@ -43,7 +43,13 @@ function updateGithub() {
 }
 
 async function processBatch(inscriptions) {
-    const textInscriptions = inscriptions.filter(it => it.content_type === 'text/plain;charset=utf-8')
+    const allowedContentTypes = [
+        'text/plain;charset=utf-8',
+        'text/plain',
+        'text/html;charset=utf-8',
+        'text/html'
+    ];
+    const textInscriptions = inscriptions.filter(it => allowedContentTypes.includes(it.content_type));
     const promises = textInscriptions.map(async (it) => {
         const res = await axios.get(`${ORD_URL}/inscription/content/${it.id}`)
         return {
